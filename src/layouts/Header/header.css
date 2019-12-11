@@ -1,0 +1,79 @@
+.header {
+  height: 3.125rem;
+  background: #404040;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  height: 100%;
+  width: 225px;
+  line-height: 50px;
+  text-align: center;
+  transition: width 1s;
+}
+.header .logo i {
+  display: none;
+}
+.header .logo h1 {
+  font-size: 25px;
+  color: #fff;
+}
+@media screen and (max-width: 992px) {
+  .header .logo {
+    width: 70px;
+    display: flex;
+    align-items: center;
+  }
+  .header .logo h1 {
+    display: none;
+  }
+  .header .logo i {
+    font-size: 20px;
+    display: block;
+    margin-left: 20px;
+  }
+  .header .right-nav {
+    width: 100% !important;
+  }
+}
+.header .right-nav {
+  width: calc(100% - 225px);
+  height: 50px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+.header .right-nav .Avatar {
+  margin-right: 20px;
+}
+.header .right-nav .Avatar .img {
+  height: 24px;
+  width: 24px;
+}
+.header .right-nav .Avatar .username {
+  display: inline-block;
+  /* height: 100%; */
+  padding: 0 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.header .right-nav .ant-breadcrumb {
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  font-size: 12px;
+  margin-left: 13px;
+}
+.header .right-nav .ant-breadcrumb > * {
+  color: #fff;
+}
+.header .right-nav .ant-breadcrumb > * > * {
+  color: #fff;
+}
+.header .right-nav .ant-breadcrumb > * > * > a {
+  color: #fff;
+}

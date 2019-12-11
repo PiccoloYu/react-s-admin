@@ -1,0 +1,60 @@
+.base-style {
+  border-radius: 5px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+.base-style > i {
+  font-size: 2.5rem;
+  padding-right: 1rem;
+  color: rgba(251, 251, 244, 0.7);
+}
+.base-style > div {
+  color: #fff;
+}
+.base-style > div > span {
+  font-size: 1rem;
+}
+.charts {
+  height: 300px;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.login-container {
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.login-container .loginForm {
+  margin: 0 auto;
+  width: 280px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+}
+.login-container .loginForm .login-form {
+  max-width: 300px;
+}
+.login-container .loginForm .login-form-forgot {
+  float: right;
+}
+.login-container .loginForm .login-form-button {
+  width: 100%;
+}
+.login-container .loginForm .spanBut {
+  color: #108ee9;
+  cursor: pointer;
+}
+.login-container .loginForm .spanBut:hover {
+  color: #38adf5;
+}
+.login-container .loginForm .spanBut:active {
+  color: #046cc2;
+}

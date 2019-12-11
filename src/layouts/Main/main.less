@@ -1,0 +1,134 @@
+.main {
+  height: calc(100% - 3.125rem);
+  transition: margin-left .3s;
+  background: #f0f2f5;
+
+  /*.mytab{
+    //height: 100%;
+  }*/
+  // 以下为 修改 ant 的tab 样式
+  .ant-tabs {
+
+    //height: 100%;
+    .ant-tabs-bar {
+      margin: 0;
+
+      .ant-tabs-nav-container {
+        height: 35px !important;
+        line-height: 35px;
+      }
+
+      .ant-tabs-extra-content {
+        height: 35px !important;
+        // line-height: 35px;
+      }
+
+      .ant-tabs-nav-wrap {
+        background: #fff;
+
+        .MyTabs:first-child {
+          margin-left: 12px;
+        }
+
+        .ant-tabs-tab {
+          height: 25px;
+          line-height: 25px;
+          padding: 0 16px;
+          margin: 2px;
+          color: #000;
+          border-radius: unset;
+
+          a {
+            color: inherit;
+          }
+
+          .ant-tabs-close-x {
+            width: 0;
+          }
+        }
+
+        .ant-tabs-tab:hover {
+          .ant-tabs-close-x {
+            width: 16px;
+          }
+        }
+
+        .ant-tabs-tab-active {
+          border-bottom: unset;
+          background: #404040;
+          color: #fff;
+
+          .ant-tabs-close-x {
+            color: #fff !important;
+            width: 16px;
+            transition: width .3s;
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
+.mainleft {
+  margin-left: 80px;
+}
+
+.mainrigth {
+  margin-left: 225px;
+}
+
+.mobile {
+  .main {
+    transition: none;
+  }
+}
+
+.contextmenu {
+  margin: 0;
+  background: #fff;
+  z-index: 3000;
+  position: absolute;
+  list-style-type: none;
+  padding: 5px 0;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
+
+  li {
+    margin: 0;
+    padding: 7px 16px;
+    cursor: pointer;
+
+    &:hover {
+      background: #eee;
+    }
+  }
+}
+
+.ant-tabs-content {
+  //height: 100%;
+  display: none !important;
+  overflow-y: auto;
+  overflow-x: auto;
+
+  .ant-tabs-tabpane {
+    padding: 0px 10px;
+    margin-top: 15px;
+  }
+}
+
+.drawer-bg {
+  background: #000;
+  opacity: 0.3;
+  width: 100%;
+  top: 0;
+  height: calc(100% - 50px) ;
+  margin-top: 50px;
+  position: absolute;
+  z-index: 999;
+  cursor: pointer;
+}

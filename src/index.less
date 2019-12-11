@@ -1,0 +1,151 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: PingFang SC, helvetica neue, hiragino sans gb, arial, microsoft yahei ui, microsoft yahei, simsun, "sans-serif", NextIcon !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.ant-menu {
+  &>* {
+    font-size: 12px !important;
+  }
+
+  .ant-menu-submenu-title {
+    font-size: 12px !important;
+  }
+}
+
+
+.router-wrapper {
+  height: calc(100vh - 85px);
+  width: 100%;
+  padding: 8px 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 992px) {
+  .router-wrapper {
+    padding: 8px 1px;
+  }
+
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all .5s;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all .5s;
+}
+
+.fade-enter-done {
+  height: 100%;
+}
+
+
+/* 路由前进时的入场/离场动画 */
+.forward-enter {
+  opacity: 0;
+  transform: translateX(100%);
+  z-index: 99;
+}
+
+.forward-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all .5s;
+}
+
+.forward-exit {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: -1;
+}
+
+.forward-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all .5s;
+}
+
+/* 路由后退时的入场/离场动画 */
+.back-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: 99;
+}
+
+.back-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all .5s;
+}
+
+.back-exit {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: -1;
+}
+
+.back-exit-active {
+  opacity: 0;
+  transform: translate(100%);
+  transition: all .5s;
+}
+
+.back-enter-done,
+.forward-enter-done {
+  height: 100%;
+}
+
+
+//第三次动画
+
+.fade1-enter, .fade-appear {
+  opacity: 0;
+}
+
+.fade1-enter.fade1-enter-active, .fade1-appear.fade1-appear-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade1-exit {
+  opacity: 1;
+}
+
+.fade1-exit.fade-exit-active {
+  opacity: 0;
+}
