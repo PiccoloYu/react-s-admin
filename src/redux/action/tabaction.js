@@ -89,3 +89,11 @@ export const isRight = view => {
     view
   }
 }
+
+export const isNull = view => {
+  return {
+    type: 'IS_NULL',
+    view
+  }
+}
+

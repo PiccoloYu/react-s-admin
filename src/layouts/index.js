@@ -29,7 +29,7 @@ class Layout extends Component {
   }
 
   componentWillUnmount() {
-    window.addEventListener('resize', this._resizeHandler);
+    window.removeEventListener('resize', this._resizeHandler);
   }
 
   _isMobile() {

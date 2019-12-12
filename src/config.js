@@ -6,8 +6,8 @@ import { Myview, Myview1 } from "../src/view/children";
 const config = {
   router: [
     { title: '首页', name: 'home', key: 'home', path: '/app/home', show: true, closable: false, icon: 'pie-chart', affix: true, component: Home },
-    { title: 'NotFound', name: 'NotFound', key: 'NotFound', path: '/app/404', show: false, icon: '', component: NotFound },
-    { title: '表格', name: 'table', key: 'table', path: '/app/table', show: true, icon: 'pie-chart', component: Test },
+    { title: 'NotFound', name: 'NotFound', key: 'NotFound', path: '/app/404', show: false, closable: true, icon: '', component: NotFound },
+    { title: '表格', name: 'table', key: 'table', path: '/app/table', show: true, closable: true, icon: 'pie-chart', component: Test },
     {
       title: '图表',
       key: 'charts',
@@ -22,6 +22,7 @@ const config = {
           key: 'mycharts',
           path: '/mycharts',
           show: true,
+          closable: true,
           component: Myview
         }, {
           title: '图表2',
@@ -29,6 +30,7 @@ const config = {
           key: 'mycharts1',
           path: '/mycharts1',
           show: true,
+          closable: true,
           component: Myview1
         }
       ]

@@ -15,6 +15,12 @@ const userInfo = {// 'password': '123456',
   'remember': true
 };
 
+Mock.mock('http://localhost:3000/user/logout', 'get', function(options) {
+  return {
+    code: 200,
+    data: 'success'
+  };
+});
 
 Mock.mock('http://localhost:3000/user/login', 'get', function (options) {
   const data = JSON.parse(options.body);

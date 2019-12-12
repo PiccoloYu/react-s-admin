@@ -8,6 +8,12 @@ export function Login(data) {
   });
 }
 
+export function Logout() {
+  return fetch({
+    url: '/user/logout',
+    method: 'get',
+  });
+}
 
 export function test() {
   return fetch({

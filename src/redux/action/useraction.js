@@ -11,3 +11,10 @@ export const isLogin = fields => {
     fields
   }
 }
+
+export const isLogout = fields => {
+  return {
+    type: 'IS_LOGOUT',
+    fields
+  }
+}

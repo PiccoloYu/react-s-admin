@@ -44,7 +44,6 @@ class Mytabs extends Component {
       contentmenuY: '',
       visible: false,
       tagName: '',
-      _thisCurrent: '/app/home'
     };
     this.onTabClick = this.onTabClick.bind(this);
     this.onEdit = this.onEdit.bind(this);
@@ -74,9 +73,6 @@ class Mytabs extends Component {
     history.listen(route => {
       if (route.pathname.indexOf("/redirect") === -1) {// 未找到 返回-1
         this.props.isCurrent(route.pathname);
-        this.setState({
-          _thisCurrent: route.pathname
-        })
         this.addTabs(route);
       }
     })
@@ -101,7 +97,7 @@ class Mytabs extends Component {
     const { Routers } = this.props;
     let pathname = '';
     if (!route) {
-      pathname = this.props.location.pathname;
+      pathname = history.location.pathname;
     } else {
       pathname = route.pathname;
     }
@@ -117,7 +113,7 @@ class Mytabs extends Component {
               name: Routers[i].name,
               title: Routers[i].title,
               key: Routers[i].key,
-              closable: Routers[i].closable ? false : true
+              closable: Routers[i].closable ? true : false
             };
           }
         } else {
@@ -130,7 +126,7 @@ class Mytabs extends Component {
                 name: Routers[i].children[j].name,
                 title: Routers[i].children[j].title,
                 key: Routers[i].children[j].key,
-                closable: Routers[i].children[j].closable ? false : true
+                closable: Routers[i].children[j].closable ? true : false
               };
             }
           }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import MyBreadcrumb from "./Breadcrumb";
 import { connect } from "react-redux";
-import { Icon, Avatar, Dropdown,Menu } from 'antd';
+import { Icon, Avatar, Dropdown, Menu } from 'antd';
 import { withRouter } from "react-router-dom";
 import { isMatchedlist, isOpen } from "../../redux/action/app";
+import { isLogout } from "../../redux/action/useraction";
 // import path from "path";
 import config from "../../config";
 import "./header.less";
@@ -18,6 +19,7 @@ class Header extends Component {
       Breadlist: '',
     };
     this.getBreadcrumb = this.getBreadcrumb.bind(this);
+    this.handleMenuClick = this.handleMenuClick.bind(this);
     const { pathname } = this.props.location;
     this.getBreadcrumb(pathname);
   }
@@ -83,8 +85,14 @@ class Header extends Component {
     this.props.isMatchedlist(matchedlist);
   }
 
-  handleMenuClick(e){
-    console.log(e.key)
+  handleMenuClick(e) {
+    switch (e.key) {
+      case 'logout':
+        this.props.isLogout();
+        return;
+      default:
+        break;
+    }
   }
 
   render() {
@@ -92,7 +100,7 @@ class Header extends Component {
     const menu = (
       <Menu onClick={this.handleMenuClick}>
         <Menu.Item key="logout">
-            退出登录
+          退出登录
         </Menu.Item>
       </Menu>
     );
@@ -131,5 +139,6 @@ export default connect(
   {
     isMatchedlist,
     isOpen,
+    isLogout
   }
 )(withRouter(Header));

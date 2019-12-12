@@ -14,8 +14,10 @@ let tabs = [];
 const visitedTabs = (state = [], action) => {
   switch (action.type) {
     case 'IS_VISITEDTABS':
-      tabs.push(action.visitedTabs);
-      return tabs;
+      if (tabs.some(v => v.fullPath !== action.visitedTabs.fullPath)) {
+        tabs.push(action.visitedTabs);
+      }
+      return [...tabs];
     case 'IS_ADDTABS':
       if (tabs.some(v => v.fullPath === action.addview.fullPath)) {
         return [...tabs];
@@ -125,6 +127,9 @@ const visitedTabs = (state = [], action) => {
         CheckView(action.view);
       })
       return [...tabs];
+    case 'IS_NULL':
+      tabs = [];
+      return tabs;
     default:
       return state;
   }
