@@ -12,7 +12,7 @@ jobs:
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@master
       env:
-        ACCESS_TOKEN: ${{ secrets.vue_s_admin }}
+        ACCESS_TOKEN: ${{ secrets.react_s_admin }}
         BRANCH: gh-pages
         FOLDER: dist
         BUILD_SCRIPT: npm install && npm run build
