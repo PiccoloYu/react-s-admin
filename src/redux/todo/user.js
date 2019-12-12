@@ -39,11 +39,17 @@ const fields = (state = defields, action) => {
             description: '恭喜登录成功.',
             icon: <Icon type="smile" style={{ color: 'green' }} />,
           });
-        }
-        setToken(res.data.token)
-        setTimeout(() => {
+          setToken(res.data.token);
+          setTimeout(() => {
             history.push('/app/home');
-        }, 1000);
+          }, 1000);
+        } else {
+          notification.open({
+            message: '登录失败！',
+            description: `${res.data.message}`,
+            icon: <Icon type="frown" style={{ color: 'red' }} />,
+          });
+        }
       })
       return state;
     case 'IS_LOGOUT':
@@ -54,6 +60,8 @@ const fields = (state = defields, action) => {
           setTimeout(() => {
             history.push('/');
           }, 1000);
+        } else {
+          return false;
         }
       })
       return state;

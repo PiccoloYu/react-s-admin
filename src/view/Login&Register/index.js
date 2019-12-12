@@ -12,13 +12,13 @@ class login extends Component {
       _thisfrom: 'login',
       registerdata: {
         username: {
-          value: '123'
+          value: ''
         },
         password: {
-          value: '123'
+          value: ''
         },
         againpassword: {
-          value: '123'
+          value: ''
         }
       }
     };
